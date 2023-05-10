@@ -1,5 +1,8 @@
+enum Team { red, blue }
+
 class Player {
-  String name, team;
+  String name;
+  Team team;
   int xp;
 
   Player({required this.name, required this.xp, required this.team});
@@ -10,20 +13,6 @@ class Player {
 }
 
 void main() {
-  // var ej = Player(name: 'ej', xp: 1200000, team: 'wcc');
-  // ej.name = 'tester';
-  // ej.xp = 5000;
-  // ej.team = 'gst';
-
-  // cascade notation (.. = ej)
-  var ej = Player(name: 'ej', xp: 1200000, team: 'wcc');
-  // ..name = 'tester'
-  // ..xp = 5000
-  // ..team = 'gst';
-  // or
-  var potato = ej
-    ..name = 'tester'
-    ..xp = 5000
-    ..team = 'gst'
-    ..sayHi();
+  var ej = Player(name: 'ej', xp: 1200000, team: Team.red);
+  ej.sayHi();
 }
