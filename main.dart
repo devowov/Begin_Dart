@@ -1,23 +1,20 @@
 class Player {
-  late final String name;
-  late int xp;
+  String name;
+  int? xp;
   String job = 'dev';
+  String team;
 
-  // Player(String name, int xp) {
-  //   this.name = name;
-  //   this.xp = xp;
-  // }
-  Player(this.name, this.xp);
+  Player({required this.name, this.xp, required this.team});
 
   void sayHi() {
-    print("Hi! i'm ${job}_${this.name}");
+    print("Hi! i'm ($team)${job}_${this.name}");
   }
 }
 
 void main() {
-  var player = Player('ej', 2000);
+  var player = Player(name: 'ej', xp: 2000, team: 'red');
   player.sayHi();
 
-  var player2 = Player('ej2', 1500);
-  player2.sayHi();
+  // var player2 = Player('ej2', 1500);
+  // player2.sayHi();
 }
