@@ -1,10 +1,23 @@
-typedef ListOfInts = List<int>;
+class Player {
+  late final String name;
+  late int xp;
+  String job = 'dev';
 
-ListOfInts reverseListOfNumbers(ListOfInts list) {
-  var reversed = list.reversed;
-  return reversed.toList();
+  // Player(String name, int xp) {
+  //   this.name = name;
+  //   this.xp = xp;
+  // }
+  Player(this.name, this.xp);
+
+  void sayHi() {
+    print("Hi! i'm ${job}_${this.name}");
+  }
 }
 
 void main() {
-  print(reverseListOfNumbers([1, 2, 3]));
+  var player = Player('ej', 2000);
+  player.sayHi();
+
+  var player2 = Player('ej2', 1500);
+  player2.sayHi();
 }
