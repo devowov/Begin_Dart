@@ -7,6 +7,10 @@ String sayHelloNamed(
   return "Hello $name and $age, you 're $country isn't it?";
 }
 
+String sayHelloNameOptional(String name, int age, [String? country = 'kr']) {
+  return "Hello $name and $age, you 're $country isn't it?";
+}
+
 String sayHelloNamed2(
     {required String name, required int age, required String country}) {
   return "Hello $name and $age, you 're $country isn't it?";
@@ -18,5 +22,9 @@ void main(List args) {
 
   print(sayHelloNamed(age: 19, name: "david"));
 
+  print(sayHelloNameOptional(
+    "david",
+    19,
+  ));
   // print(sayHelloNamed2(age: 19, name: "david"));
 }
