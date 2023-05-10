@@ -1,13 +1,22 @@
 class Player {
-  String name;
-  int? xp;
+  String name, team;
+  int xp;
   String job = 'dev';
-  String team;
 
-  Player({required this.name, this.xp, required this.team});
+  Player({required this.name, required this.xp, required this.team});
+
+  Player.createBluePlayer({required String name})
+      : this.xp = 0,
+        this.name = name,
+        this.team = 'blue';
+
+  Player.createBlackPlayer(String name)
+      : this.xp = 0,
+        this.name = name,
+        this.team = 'black';
 
   void sayHi() {
-    print("Hi! i'm ($team)${job}_${this.name}");
+    print("Hi! i'm ($team)${job}_${this.name} - lvl $xp");
   }
 }
 
@@ -15,6 +24,9 @@ void main() {
   var player = Player(name: 'ej', xp: 2000, team: 'red');
   player.sayHi();
 
-  // var player2 = Player('ej2', 1500);
-  // player2.sayHi();
+  var bluePlayer = Player.createBluePlayer(name: 'tori');
+  bluePlayer.sayHi();
+
+  var blackPlayer = Player.createBlackPlayer('tomas');
+  blackPlayer.sayHi();
 }
