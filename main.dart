@@ -1,30 +1,16 @@
-String sayHello(String name, int age, String country) {
-  return "Hello $name and $age, you 're $country isn't it?";
-}
+// ??
+String capitalizeName(String? name) =>
+    //name != null ? name.toUpperCase() : 'none';
+    name?.toUpperCase() ?? 'none';
 
-String sayHelloNamed(
-    {String name = 'none', int age = 10, String country = 'kr'}) {
-  return "Hello $name and $age, you 're $country isn't it?";
-}
+void main() {
+  print(capitalizeName('ej'));
+  print(capitalizeName('none'));
 
-String sayHelloNameOptional(String name, int age, [String? country = 'kr']) {
-  return "Hello $name and $age, you 're $country isn't it?";
-}
-
-String sayHelloNamed2(
-    {required String name, required int age, required String country}) {
-  return "Hello $name and $age, you 're $country isn't it?";
-}
-
-// named
-void main(List args) {
-  print(sayHello("david", 19, "winter"));
-
-  print(sayHelloNamed(age: 19, name: "david"));
-
-  print(sayHelloNameOptional(
-    "david",
-    19,
-  ));
-  // print(sayHelloNamed2(age: 19, name: "david"));
+  // ??=
+  String? name = '있는뒈';
+  name ??= 'ej';
+  // name = null;
+  // name ??= 'another';
+  print(name);
 }
